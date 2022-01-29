@@ -89,6 +89,7 @@ main .pedido {
 .item ion-icon {
     position: absolute;
     right: 10px;
+    bottom: 10px;
     color: #32B72F;
     font-size: 20px;
     display: none;
@@ -114,26 +115,27 @@ footer {
     background: #FFFFFF;
 }
 
-.finalizar {
+.bordaFechamento {
     position: relative;
     width: 90%;
     height: 70%;
     background: #CBCBCB;
     border-radius: 50px;
     margin: auto;
-    position: relative;
     top: 15%;
 }
 
-.finalizar p {
-    max-width: 60%;
+.finarlizarTexto {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 60%;
+    height: 100%;
     color: #FFFFFF;
     font-size: 20px;
     font-weight: 400;
     margin: auto;
-    position: relative;
-    top: 15%;
-    text-align: center;
+    line-height: 23px
 }
 
 .selected {
