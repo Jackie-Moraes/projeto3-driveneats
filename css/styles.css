@@ -8,6 +8,69 @@ body {
     box-sizing: border-box;
 }
 
+.backgroundConfirmacao {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    background: rgba(255, 255, 255, 0.9);
+    z-index: 2;
+}
+
+.telaPedido {
+    position: absolute;
+    width: 95%;
+    height: 50%;
+    background: #50d074;
+    top: 25%;
+    left: 2.5%;
+    box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.25);
+    border-radius: 9px;
+}
+
+.informacoes {
+    margin: 0 10px;
+}
+
+.confirmarPedido {
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 22px;
+    line-height: 50px;
+    font-weight: 700;
+}
+
+.informacoes .prato, .bebida, .sobremesa, .total {
+    display: flex;
+    justify-content: space-between;
+    font-size: 22px;
+    line-height: 40px;
+    color: #FFFFFF;
+}
+
+.finalizarPedido {
+    color: #50D074;
+    background: #FFFFFF;
+    border-radius: 100px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    font-weight: 700;
+    margin-top: 15px;
+}
+
+.cancelamento {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10px;
+    font-size: 20px;
+    color: #FFFFFF;
+}
+
+
+
 header {
     width: 100%;
     background-color: #CF2B2B;
@@ -141,3 +204,7 @@ footer {
 .selected {
     box-shadow: 0px 0px 10px -4px rgba(0, 0, 0, 0.25), inset 0px 0px 0px 5px #32B72F;
 } 
+
+.escondido {
+    display: none;
+}

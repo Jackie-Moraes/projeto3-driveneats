@@ -16,6 +16,45 @@
 
 <body>
 
+    <section class="backgroundConfirmacao escondido">
+        <div class="telaPedido" data-identifier="confirmation-dialog">
+            <div class="informacoes">
+
+                <div class="confirmarPedido">
+                <p>Confirme seu pedido</p>
+                </div>
+
+                <div class="prato">
+                    <p id="pratoFim">placeHolder</p>
+                    <p id="pratoFimValor">placeHolder</p>
+                </div>
+
+                <div class="bebida">
+                    <p id="bebidaFim">placeHolder</p>
+                    <p id="bebidaFimValor">placeHolder</p>
+                </div>
+
+                <div class="sobremesa">
+                    <p id="sobremesaFim">placeHolder</p>
+                    <p id="sobremesaFimValor">placeHolder</p>
+                </div>
+                
+                <div class="total">
+                    <p>TOTAL</p>
+                    <p id="valorFim">placeHolder</p>
+                </div>
+                
+                <div class="finalizarPedido" onclick="enviarPedido()">
+                    <p>Tudo certo, pode pedir!</p>
+                </div>
+
+                <div class="cancelamento" onclick="esconderPedido()">
+                    <p>Cancelar</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <header>
         <div class="logo">
             <h1>DrivenEats</h1>
@@ -27,32 +66,32 @@
         <p class="pedido">Primeiro, seu prato</p>
 
         <section>
-            <div class="opcoes pratos">
-                <div class="item" onclick="selecaoPrato(this)">
+            <div class="opcoes pratos" data-identifier="dishes">
+                <div class="item" onclick="selecaoPrato(this)" data-identifier="food-option">
                     <img src="images/frangoapassarinho.jpg" alt="Opção">
-                    <p class="nome">Frango á Passarinho</p>
+                    <p class="nome" data-identifier="food-title">Frango á Passarinho</p>
                     <p class="desc">Porção Frango Á Passarinho</p>
-                    <p class="price">R$ 19,90</p>
+                    <p class="price" value='19,90' data-identifier="food-price">R$ 19,90</p>
                     <div class="icone">
                         <ion-icon name="checkmark-circle" ></ion-icon>
                     </div>
                 </div>
 
-                <div class="item" onclick="selecaoPrato(this)">
+                <div class="item" onclick="selecaoPrato(this)" data-identifier="food-option">
                     <img src="images/batatacalabresa.jpg" alt="Opção">
-                    <p class="nome">Batata com Calabresa</p>
+                    <p class="nome" data-identifier="food-title">Batata com Calabresa</p>
                     <p class="desc">Porção Batata Com Calabresa grande</p>
-                    <p class="price">R$ 54,90</p>
+                    <p class="price" value='54,90' data-identifier="food-price">R$ 54,90</p>
                     <div class="icone">
                         <ion-icon name="checkmark-circle" ></ion-icon>
                     </div>
                 </div>
 
-                <div class="item" onclick="selecaoPrato(this)">
+                <div class="item" onclick="selecaoPrato(this)" data-identifier="food-option">
                     <img src="images/parmegiana.jpg" alt="Opção">
-                    <p class="nome">Parmegiana de Frango</p>
+                    <p class="nome" data-identifier="food-title">Parmegiana de Frango</p>
                     <p class="desc">Filé de Peito de frango à milanesa </p>
-                    <p class="price">R$ 38,99</p>
+                    <p class="price" value='38,99' data-identifier="food-price">R$ 38,99</p>
                     <div class="icone">
                         <ion-icon name="checkmark-circle" ></ion-icon>
                     </div>
@@ -64,32 +103,35 @@
         <p class="pedido">Agora, sua bebida</p>
 
         <section>
-            <div class="opcoes bebidas">
-                <div class="item" onclick="selecaoBebida(this)">
+
+            
+
+            <div class="opcoes bebidas" data-identifier="drinks" >
+                <div class="item" onclick="selecaoBebida(this)" data-identifier="food-option">
                     <img src="images/coca.jpg" alt="Opção">
-                    <p class="nome">Coquinha Gelada</p>
+                    <p class="nome" data-identifier="food-title">Coquinha Gelada</p>
                     <p class="desc">Lata 350ml</p>
-                    <p class="price">R$ 7,50</p>
+                    <p class="price" value='7,50' data-identifier="food-price">R$ 7,50</p>
                     <div class="icone">
                         <ion-icon name="checkmark-circle" ></ion-icon>
                     </div>
                 </div>
 
-                <div class="item" onclick="selecaoBebida(this)">
+                <div class="item" onclick="selecaoBebida(this)" data-identifier="food-option">
                     <img src="images/guarana.jpg" alt="Opção">
-                    <p class="nome">Guarana</p>
+                    <p class="nome" data-identifier="food-title">Guarana</p>
                     <p class="desc">Lata 295ml</p>
-                    <p class="price">R$ 7,50</p>
+                    <p class="price" value='7,50' data-identifier="food-price">R$ 7,50</p>
                     <div class="icone">
                         <ion-icon name="checkmark-circle" ></ion-icon>
                     </div>
                 </div>
 
-                <div class="item" onclick="selecaoBebida(this)">
+                <div class="item" onclick="selecaoBebida(this)" data-identifier="food-option">
                     <img src="images/heineken.jpeg" alt="Opção">
-                    <p class="nome">Heineken</p>
+                    <p class="nome" data-identifier="food-title">Heineken</p>
                     <p class="desc">Long Neck Heineken 330ml</p>
-                    <p class="price">R$ 13,50</p>
+                    <p class="price" value='13,50' data-identifier="food-price">R$ 13,50</p>
                     <div class="icone">
                         <ion-icon name="checkmark-circle" ></ion-icon>
                     </div>
@@ -101,32 +143,32 @@
         <p class="pedido">Por fim, sua sobremesa</p>
 
         <section>
-            <div class="opcoes sobremesas">
-                <div class="item" onclick="selecaoSobremesa(this)">
+            <div class="opcoes sobremesas" data-identifier="desserts">
+                <div class="item" onclick="selecaoSobremesa(this)" data-identifier="food-option">
                     <img src="images/moussemorango.jpeg" alt="Opção">
-                    <p class="nome">Morango com ninho e nutella</p>
+                    <p class="nome" data-identifier="food-title">Morango com ninho</p>
                     <p class="desc">Creme branco, morangos frescos</p>
-                    <p class="price">R$ 8,99</p>
+                    <p class="price" value='8,99' data-identifier="food-price">R$ 8,99</p>
                     <div class="icone">
                         <ion-icon name="checkmark-circle" ></ion-icon>
                     </div>
                 </div>
 
-                <div class="item" onclick="selecaoSobremesa(this)">
+                <div class="item" onclick="selecaoSobremesa(this)" data-identifier="food-option">
                     <img src="images/ferrerorocher.jpg" alt="Opção">
-                    <p class="nome">Ferrero Rocher</p>
+                    <p class="nome" data-identifier="food-title">Ferrero Rocher</p>
                     <p class="desc">Creme de chocolate, Nutella purinha e massa de chocolate</p>
-                    <p class="price">R$ 12,49</p>
+                    <p class="price" value='12,49' data-identifier="food-price">R$ 12,49</p>
                     <div class="icone">
                         <ion-icon name="checkmark-circle" ></ion-icon>
                     </div>
                 </div>
 
-                <div class="item" onclick="selecaoSobremesa(this)">
+                <div class="item" onclick="selecaoSobremesa(this)" data-identifier="food-option">
                     <img src="images/bolopiscina.jpg" alt="Opção">
-                    <p class="nome">Bolo piscina chocolate</p>
+                    <p class="nome" data-identifier="food-title">Bolo piscina chocolate</p>
                     <p class="desc">Massa de chcocolate e recheio de brigadeiro.</p>
-                    <p class="price">R$ 23,00</p>
+                    <p class="price" value='23,00' data-identifier="food-price">R$ 23,00</p>
                     <div class="icone">
                         <ion-icon name="checkmark-circle" ></ion-icon>
                     </div>
@@ -137,7 +179,7 @@
 
 
     <footer>
-        <div class="bordaFechamento" id="bordaPedido" >
+        <div class="bordaFechamento" id="bordaPedido" onclick="confirmarPedido()">
             <div class="finarlizarTexto" >
                 <p id="finalPedido">Selecione os 3 itens para fechar o pedido</p>
             </div>
