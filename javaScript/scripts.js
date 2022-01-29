@@ -1,43 +1,47 @@
-// var selecoes = document.querySelectorAll(".item");
-// var numSelected = 0;
-// for(var i = 0;i<selecoes.length;i++){
-//     selecoes[i].addEventListener("click", function(){        
-//         if(this.classList.contains("selected")){
-//             this.classList.remove("selected");
-//             numSelected--;
-//         }
-//         else if(numSelected < 1){
-//             this.classList.add("selected");
-//             numSelected++;
-//         }
-//     });
-// }
-
+let pratoSelecionado = null;
+let bebidaSelecionada = null;
+let sobremesaSelecionada = null;
 
 function selecaoPrato(prato) {
-    const selecionado = document.querySelector(".pratos .selected");
-    if (selecionado !== null) {
+    const selecionado = document.querySelector('.pratos .selected');
+    const icone = document.querySelector('.pratos .aparecendo')
+
+    if (selecionado !== null || icone !== null) {
         selecionado.classList.remove("selected");
+        icone.classList.remove("aparecendo");
     }
     
-    prato.classList.toggle("selected");
+    prato.querySelector('.icone').classList.add('aparecendo');
+    prato.classList.add("selected");
+
+    pratoSelecionado = prato.querySelector('.nome').innerHTML;
 }
 
 function selecaoBebida(bebida) {
     const selecionado = document.querySelector(".bebidas .selected");
-    if (selecionado !== null) {
+    const icone = document.querySelector('.bebidas .aparecendo')
+
+    if (selecionado !== null || icone !== null) {
         selecionado.classList.remove("selected");
+        icone.classList.remove("aparecendo");
     }
 
-
-    bebida.classList.toggle("selected");
+    bebida.querySelector('.icone').classList.add('aparecendo');
+    bebida.classList.add("selected");
+    bebidaSelecionada = bebida.querySelector('.nome').innerHTML;
 }
 
 function selecaoSobremesa(sobremesa) {
     const selecionado = document.querySelector(".sobremesas .selected");
-    if (selecionado !== null) {
+    const icone = document.querySelector(".sobremesas .aparecendo");
+
+    if (selecionado !== null || icone !== null) {
         selecionado.classList.remove("selected");
+        icone.classList.remove("aparecendo");
     }
    
-    sobremesa.classList.toggle("selected");
+    sobremesa.querySelector('.icone').classList.add('aparecendo');
+    sobremesa.classList.add("selected");
+    sobremesaSelecionada = sobremesa.querySelector('.nome').innerHTML;
 }
+
